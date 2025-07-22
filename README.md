@@ -77,15 +77,8 @@ python trainer.py
 python extractor.py
 ```
 
----
 
-## 🌐 UI (Optional)
 
-Build a web interface (e.g. with React or Streamlit) for:
-
-- Uploading invoice files  
-- Displaying parsed results with highlights  
-- Exporting results  
 
 ---
 
@@ -94,21 +87,10 @@ Build a web interface (e.g. with React or Streamlit) for:
 - [SROIE Dataset (Kaggle)](https://www.kaggle.com/datasets/urbikn/sroie-datasetv2)
 - [GitHub: Invoice PDFs](https://github.com/topics/invoice-pdf)
 
-Upload your own 5–10 sample invoices for better testing and model tuning.
 
 ---
 
-## 🧮 Evaluation Criteria
 
-| Metric | Weight |
-|--------|--------|
-| 📈 Accuracy of extracted data | 40% |
-| 🧩 Layout flexibility         | 20% |
-| 🔧 Code quality & structure   | 15% |
-| 🤖 Use of AI tools            | 15% |
-| ✨ Bonus features & UI        | 10% |
-
----
 
 ## 📦 Folder Structure
 
@@ -145,13 +127,7 @@ MIT License
 
 ---
 
-## 👤 Author
 
-**Prasad Bhujbal**  
-📧 Email: [your.email@example.com]  
-🔗 [LinkedIn](https://www.linkedin.com/in/prasad-bhujbal)  
-🐙 [GitHub](https://github.com/yourusername)
 
----
 
 <center> <strong>📄 Smart Invoice Parser – Automate Invoice Intelligence with AI!</strong> </center>
