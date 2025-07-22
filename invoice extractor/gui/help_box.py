@@ -33,13 +33,13 @@ class HelpBox(Frame):
         self.rowconfigure(1, weight=0)
         self.rowconfigure(2, weight=0)
 
-        Label(self, text="Meet InvoiceNet!", anchor='nw', width=100,
-              font="OpenSans 22 bold", fg='white', bg=background, bd=2).grid(row=0, column=0, padx=20, pady=20)
+        Label(self, text="Meet Smart Invoice Extractor!", anchor='nw', width=100,
+              font="OpenSans 22 bold", fg='#f1f5fa', bg='#1e3a5f', bd=2).grid(row=0, column=0, padx=20, pady=20)
 
-        Label(self, text="Made with ❤ by naiveHobo", anchor='nw', width=100,
-              font="OpenSans 10 bold", fg='white', bg=background, bd=2).grid(row=2, column=0, padx=20, pady=20)
+        Label(self, text="Made with  by naiveHobo", anchor='nw', width=100,
+              font="OpenSans 10 bold", fg='#f1f5fa', bg='#1e3a5f', bd=2).grid(row=2, column=0, padx=20, pady=20)
 
-        text_frame = Frame(self, height=440, width=550, bg=background, bd=2, relief=SUNKEN)
+        text_frame = Frame(self, height=440, width=550, bg='#1e3a5f', bd=2, relief=SUNKEN)
         text_frame.grid(row=1, column=0)
 
         text_frame.grid_propagate(False)
@@ -47,8 +47,8 @@ class HelpBox(Frame):
         text_frame.grid_rowconfigure(0, weight=1)
         text_frame.grid_columnconfigure(0, weight=1)
 
-        text_box = Text(text_frame, borderwidth=3, relief="sunken", bg=background,
-                        fg='white', font="OpenSans 12", wrap='word')
+        text_box = Text(text_frame, borderwidth=3, relief="sunken", bg='#1e3a5f',
+                        fg='#f1f5fa', font="OpenSans 12", wrap='word')
 
         with open(r'widgets/help.txt', 'r') as infile:
             texts = infile.read()
@@ -82,15 +82,15 @@ class HelpBox(Frame):
         for text, image in zip(texts[-3:], ['begin.png', 'labels.png', 'labels.png']):
             splits = text.strip().split('\n\n')
             btn = HoverButton(text_box, image_path=r'widgets/' + image, text=splits[0],
-                              compound='center', font=("Arial", 10, "bold"), bd=0, bg=background,
-                              highlightthickness=0, activebackground=background)
+                              compound='center', font=("Arial", 10, "bold"), bd=0, bg='#1e3a5f',
+                              highlightthickness=0, activebackground='#1e3a5f')
             text_box.window_create(END, window=btn)
             text_box.insert(END, '\n\n' + '\n\n'.join(splits[1:]) + '\n\n\n')
 
         text_box.config(state=DISABLED)
         text_box.grid(row=0, column=0, sticky="nsew", padx=2, pady=2)
 
-        scroll_bar = Scrollbar(text_frame, command=text_box.yview, bg=background)
+        scroll_bar = Scrollbar(text_frame, command=text_box.yview, bg='#1e3a5f')
         scroll_bar.grid(row=0, column=1, sticky='nsew')
 
         text_box['yscrollcommand'] = scroll_bar.set

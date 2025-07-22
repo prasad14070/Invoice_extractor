@@ -42,10 +42,10 @@ class Extractor(Frame):
 
     def __init__(self, master=None, **kw):
         Frame.__init__(self, master, **kw)
-        self.background = '#303030'
-        self.border_color = '#404040'
-        self.checkbox_color = '#333333'
-        self.highlight_color = '#558de8'
+        self.background = '#1e3a5f'
+        self.border_color = '#2563eb'
+        self.checkbox_color = '#224488'
+        self.highlight_color = '#2563eb'
         self.pdf = None
         self.paths = list()
         self.pathidx = -1
@@ -65,7 +65,7 @@ class Extractor(Frame):
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.master.maxsize(w, h)
         self.master.minsize(w, h)
-        self.master.title("InvoiceNet")
+        self.master.title("Smart Invoice Extractor")
 
         self.pack(fill=BOTH, expand=True)
 
@@ -90,7 +90,7 @@ class Extractor(Frame):
         tool_frame.rowconfigure(2, weight=0)
         tool_frame.rowconfigure(3, weight=2)
 
-        options = MenuBox(tool_frame, image_path=r'widgets/options.png', bg=self.background)
+        options = MenuBox(tool_frame, image_path=r'widgets/options.png', bg=self.background, highlight=self.highlight_color)
         options.grid(row=0, column=0)
 
         options.add_item('Open Files...', self._open_file)
@@ -180,8 +180,8 @@ class Extractor(Frame):
 
         self.logo_img = ImageTk.PhotoImage(Image.open(r'widgets/logo.png'))
         Label(logo_frame, bg=self.background, image=self.logo_img).grid(row=0, column=1, sticky='news', pady=10)
-        Label(logo_frame, text="InvoiceNet", bg=self.background,
-              fg="white", font=("Arial", 24, "bold")).grid(row=0, column=2, sticky='news', padx=20, pady=10)
+        Label(logo_frame, text="Smart Invoice Extractor", bg=self.background,
+              fg="#f1f5fa", font=("Arial", 24, "bold")).grid(row=0, column=2, sticky='news', padx=20, pady=10)
 
         # Param Frame
         param_frame.columnconfigure(0, weight=1)
